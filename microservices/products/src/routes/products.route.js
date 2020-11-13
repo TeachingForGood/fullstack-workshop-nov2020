@@ -1,18 +1,17 @@
 const { Router } = require('express');
+const ProductController = require('../manage-products/product.controller');
 
 const router = new Router();
+const productController = new ProductController();
 
-// Respond to POST request on the root route (/), the application’s home page:
-router.post('/create', (req, res) => {
-    res.send('Got a create product request')
-})
+router.get('/all', productController.retrieveAllProducts);
 
-// Respond to a PUT request to the /user route:
-router.put('/update', function (req, res) {
-    res.send('Got a update product request')
-})
+router.get('/search', productController.retrieveProduct);
 
-// Respond to a DELETE request to the /user route:
+router.post('/create', productController.createProduct);
+
+router.put('/update', productController.updateProduct);
+
 router.delete('/delete', function (req, res) {
     res.send('Got a delete product request')
 })

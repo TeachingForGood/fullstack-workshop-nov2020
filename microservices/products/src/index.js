@@ -1,7 +1,6 @@
 const bodyParser = require('body-parser');
 const env = require('dotenv');
 env.config();
-const DB_CONN = require('./database/db.connector');
 const routes = require('./routes/index.route');
 
 const express = require('express');
@@ -10,7 +9,6 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT_PRODUCT || 3000;
 
-DB_CONN.initDBConnection();
 const BASE_URL = '/fullstack';
 
 app.get('/', (req, res) => {
