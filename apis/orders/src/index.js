@@ -8,7 +8,7 @@ const express = require('express');
 const app = express();
 app.use(bodyParser.json());
 
-const port = process.env.PORT_PRODUCT || 3000;
+const port = process.env.PORT_ORDER || 3000;
 
 DB_CONN.initDBConnection();
 const BASE_URL = '/fullstack';
