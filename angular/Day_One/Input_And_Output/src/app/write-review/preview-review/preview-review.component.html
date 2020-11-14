@@ -1,0 +1,16 @@
+<mat-card *ngIf="review; else placeholder">
+  <mat-card-header>
+    <h1>{{ review?.title }}</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <h2 *ngIf="review?.rating">Rating: {{ review?.rating | number }}</h2>
+    <p>{{ review?.comments }}</p>
+  </mat-card-content>
+</mat-card>
+<ng-template #placeholder>
+  <mat-card>
+    <mat-card-content>
+      <em>Review preview will appear here when data is entered...</em>
+    </mat-card-content>
+  </mat-card>
+</ng-template>

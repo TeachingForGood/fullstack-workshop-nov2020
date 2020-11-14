@@ -1,0 +1,24 @@
+<div>
+  <h1>{{ pageTitle }}</h1>
+  <form [formGroup]="reviewForm">
+    <div>
+      <label>Title</label>
+      <input formControlName="title" type="text">
+    </div>
+    <div>
+      <label>Rating</label>
+      <input formControlName="rating" type="text">
+    </div>
+    <div>
+      <label>Comments</label>
+      <input formControlName="comments" type="text">
+    </div>
+    <div>
+      <button>Submit Review</button>
+    </div>
+  </form>
+  <br/>
+  <div>
+    <button (click)="onLogButtonClick()">Log the Form Value</button>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.review-card {
+  mat-card {
+    width: 40vw;
+    height: 40vh;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  mat-card-footer {
+    display: flex;
+    flex-direction: row;
+  }
+}

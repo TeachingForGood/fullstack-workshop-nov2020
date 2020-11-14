@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-header>
+    <h1>Write Review</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="reviewForm">
+      <div>
+        <mat-form-field>
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" type="text">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Rating</mat-label>
+          <input matInput formControlName="rating" type="number">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Comments</mat-label>
+          <input matInput formControlName="comments" type="text">
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-footer>
+    <div>
+      <button mat-stroked-button color="primary">Submit Review</button>
+    </div>
+  </mat-card-footer>
+</mat-card>
+
