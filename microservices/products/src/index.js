@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 // Respond to POST request on the root route (/), the application’s home page:
 app.post('/create', (req, res) => {
   console.log(req.body);
-  res.send('Hello World - Create')
+  res.send({ result: 'success' })
 })
 
 // Respond to a PUT request to the /user route:
