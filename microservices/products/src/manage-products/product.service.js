@@ -6,15 +6,19 @@ class ProductService {
     `;
 
     UPDATE_PRODUCT = `
-        UPDATE Products.products set name = ?, price = ? , description= ? where name = ?;
+        UPDATE Products.products set name = ?, price = ? , description= ? where id = ?;
+    `;
+
+    DELETE_PRODUCT = `
+        DELETE FROM Products.products where id = ?;
     `;
 
     SELECT_ALL_PRODUCT = `
-        SELECT name, price, description FROM Products.products;
+        SELECT id, name, price, description FROM Products.products;
     `;
 
     SELECT_PRODUCT = `
-        SELECT name, price, description FROM Products.products where name like ?;
+        SELECT id, name, price, description FROM Products.products where name like ?;
     `;
     constructor() {
         this.databaseService = new DatabaseService();
@@ -34,13 +38,26 @@ class ProductService {
           }
     }
 
-    async updateProduct({ name, price, description }) {
+    async updateProduct({ name, price, description }, productId) {
         try {
             // Insert into Products
             const { updateId } = await this.databaseService.query(this.UPDATE_PRODUCT, 
-                [ name, price, description, name ]);
+                [ name, price, description, productId ]);
       
             return updateId;
+          } catch (error) {
+            console.error(error);
+            throw error;
+          }
+    }
+
+    async deleteProduct(productId) {
+        try {
+            // Insert into Products
+            const { deleteId } = await this.databaseService.query(this.DELETE_PRODUCT, 
+                [ productId ]);
+      
+            return deleteId;
           } catch (error) {
             console.error(error);
             throw error;

@@ -10,10 +10,8 @@ router.get('/search', productController.retrieveProduct);
 
 router.post('/create', productController.createProduct);
 
-router.put('/update', productController.updateProduct);
+router.put('/update/:productId', productController.updateProduct);
 
-router.delete('/delete', function (req, res) {
-    res.send('Got a delete product request')
-})
+router.delete('/delete/:productId', productController.deleteProduct);
 
 module.exports = router;

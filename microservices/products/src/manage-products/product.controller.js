@@ -18,8 +18,20 @@ class ProductController {
 
     updateProduct= async (req, res) => {
         try {
+            const productId = req.params.productId
             const productDetails = req.body;
-            await this.productService.updateProduct(productDetails);
+            await this.productService.updateProduct(productDetails, productId);
+            return res.json({'result': 'success'});
+        } catch (error) {
+            console.error(error);
+            return res.status(500).json({ status: 'Failed', message: 'Error updating Products' });
+        }
+    } 
+
+    deleteProduct= async (req, res) => {
+        try {
+            const productId = req.params.productId
+            await this.productService.deleteProduct(productId);
             return res.json({'result': 'success'});
         } catch (error) {
             console.error(error);
