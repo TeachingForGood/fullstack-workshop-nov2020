@@ -20,6 +20,11 @@ class ProductService {
     SELECT_PRODUCT = `
         SELECT id, name, price, description FROM Products.products where name like ?;
     `;
+
+    SELECT_PRODUCT_BY_ID = `
+        SELECT id, name, price, description FROM Products.products where id = ?;
+    `;
+
     constructor() {
         this.databaseService = new DatabaseService();
     }
@@ -80,6 +85,18 @@ class ProductService {
         try {
             // Insert into Products
             const result = await this.databaseService.query(this.SELECT_PRODUCT, [ `${name}%` ]);
+      
+            return result;
+          } catch (error) {
+            console.error(error);
+            throw error;
+          }
+    }
+
+    async retrieveProductById(id) {
+        try {
+            // Insert into Products
+            const result = await this.databaseService.query(this.SELECT_PRODUCT_BY_ID, [ id ]);
       
             return result;
           } catch (error) {
