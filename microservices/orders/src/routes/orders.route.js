@@ -1,20 +1,21 @@
 const { Router } = require('express');
+const OrderController = require('../manage-orders/order.controller');
+const OrderMiddleware = require('../manage-orders/order.middleware');
 
 const router = new Router();
+const orderController = new OrderController();
+const orderMiddleware = new OrderMiddleware();
 
-// Respond to POST request on the root route (/), the application’s home page:
-router.post('/create', (req, res) => {
-    res.send('Got a create order request')
-})
+router.get('/all', orderController.retrieveAllOrders);
 
-// Respond to a PUT request to the /user route:
-router.put('/update', function (req, res) {
-    res.send('Got a update order request')
-})
+router.get('/search', orderController.retrieveOrder);
 
-// Respond to a DELETE request to the /user route:
-router.delete('/delete', function (req, res) {
-    res.send('Got a delete order request')
-})
+router.get('/:id', orderController.retrieveOrderById);
+
+router.post('/create', orderMiddleware.validateCreate, orderController.createOrder);
+
+router.put('/update/:orderId', orderMiddleware.validateUpdate, orderController.updateOrder);
+
+router.delete('/delete/:orderId', orderMiddleware.validateDelete, orderController.deleteProduct);
 
 module.exports = router;

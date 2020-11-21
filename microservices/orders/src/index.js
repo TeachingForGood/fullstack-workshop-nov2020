@@ -1,7 +1,6 @@
 const bodyParser = require('body-parser');
 const env = require('dotenv');
 env.config();
-const DB_CONN = require('./database/db.connector');
 const routes = require('./routes/index.route');
 
 const express = require('express');
@@ -10,7 +9,6 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT_ORDER || 3000;
 
-DB_CONN.initDBConnection();
 const BASE_URL = '/fullstack';
 
 app.get('/', (req, res) => {
@@ -20,7 +18,7 @@ app.get('/', (req, res) => {
 // Respond to POST request on the root route (/), the application’s home page:
 app.post('/create', (req, res) => {
   console.log(req.body);
-  res.send('Hello World - Create')
+  res.send({ result: 'success' })
 })
 
 // Respond to a PUT request to the /user route:
