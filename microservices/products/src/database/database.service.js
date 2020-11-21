@@ -21,9 +21,8 @@ class DatabaseService {
    */
   query = async (query, params) => {
     try {
-      const [rows] = await this.databaseConnection.query(query, params);
-
-      return rows;
+      const resultData  = await this.databaseConnection.query(query, params);
+      return resultData[0];
     } catch (error) {
       console.log('Failure in query: ', error);
 

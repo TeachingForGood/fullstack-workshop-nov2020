@@ -1,14 +1,14 @@
-const { readFile } = require('fs').promises
+const { readFile } = require('fs').promises;
 
 readLocalFile = () => {
-       let promiseReturned = readFile('input.txt', { encoding: 'utf8' });
+       let promiseReturned = readFile('inputjhjjh.txt', { encoding: 'utf8' });
        
        promiseReturned
        .then((data) => {
               console.log(data);
        })
        .catch((error) => { 
-              console.error(error)
+              console.error('Got error reading file: ', error);
        });
 
        console.log("Program Ended");
