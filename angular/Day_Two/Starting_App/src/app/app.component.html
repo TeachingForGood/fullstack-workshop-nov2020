@@ -1,0 +1,18 @@
+<div class="app-container">
+  <mat-toolbar class="app-toolbar">
+    <h1 class="linkify" routerLink="">Groovy Movie Scrutiny</h1>
+    <span class="spacer"></span>
+    <mat-nav-list>
+      <a
+        mat-list-item
+        *ngFor="let route of routes"
+        [routerLink]="[route.url]"
+      >
+        <mat-icon>{{ route.icon }}</mat-icon><span class="routeText">{{ route.text }}</span>
+      </a>
+    </mat-nav-list>
+  </mat-toolbar>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
