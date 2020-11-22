@@ -1,0 +1,7 @@
+<div class="center-container">
+  <h1>{{ pageTitle }}</h1>
+  <div class="review-card">
+    <app-write-review-form (dataUpdate)="handleReviewFormUpdate($event)"></app-write-review-form>
+    <app-preview-review [review]="reviewData"></app-preview-review>
+  </div>
+</div>
