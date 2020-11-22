@@ -1,0 +1,10 @@
+<div class="rating-container">
+  <div class="stars">
+    <button mat-icon-button *ngFor="let index of ratingsArray" (click)="setRating(index)">
+      <mat-icon>{{ getIcon(index) }}</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="rating" class="rating-display">
+    <h2>{{ rating }} / {{ numStars }}</h2>
+  </div>
+</div>

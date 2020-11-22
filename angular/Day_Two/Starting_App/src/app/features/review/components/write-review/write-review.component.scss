@@ -1,0 +1,19 @@
+.center-container {
+  height: 95vh;
+  mat-card {
+    padding: 2rem;
+  }
+  background: radial-gradient(ellipse at top, #6476c7, transparent),
+  radial-gradient(ellipse at bottom, #9f0c7a, transparent);
+}
+app-star-rating {
+  width: 100%;
+}
+.form-controls {
+  flex-direction: column;
+}
+.center-container, .form-controls, mat-card-header, mat-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
