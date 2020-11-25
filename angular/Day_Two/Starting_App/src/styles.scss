@@ -21,6 +21,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .review-card {
+  overflow: hidden;
   width: 30vw;
   display: flex;
   justify-content: center;
