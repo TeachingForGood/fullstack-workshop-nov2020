@@ -11,7 +11,6 @@
             <input matInput formControlName="title" type="text">
             <mat-error *ngIf="reviewForm?.controls?.title?.errors?.required">Title is required.</mat-error>
           </mat-form-field>
-          <app-star-rating (ratingChanged)="handleRatingChange($event)"></app-star-rating>
           <mat-form-field>
             <mat-label>Comments</mat-label>
             <textarea matInput formControlName="comments" type="text" rows="6" placeholder="This movie was..."></textarea>
@@ -19,6 +18,7 @@
           </mat-form-field>
         </div>
       </form>
+      <app-star-rating (ratingChanged)="handleRatingChange($event)"></app-star-rating>
     </mat-card-content>
     <mat-card-footer>
       <button mat-stroked-button color="primary" (click)="createReview()">Submit Review</button>
