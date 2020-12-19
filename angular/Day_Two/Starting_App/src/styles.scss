@@ -40,3 +40,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     flex-direction: row;
   }
 }
+
+.form-controls {
+  flex-direction: column;
+}
+
+.center-container, .form-controls, mat-card-header, mat-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

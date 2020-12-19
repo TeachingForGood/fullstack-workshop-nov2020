@@ -31,5 +31,21 @@
       "RVW_CMNTS": "This movie was entertaining."
     }
   ],
-  "users": []
+  "users": [
+    {
+      "username": "testUser",
+      "id": "XCAM3QExIORqattLpEITD",
+      "password": "$2b$15$/TNZyMnNNLuvcDQ7Uo2K9u/dXhcGYi/kcOWXX8ASZ/Wu0rSoBdsDa"
+    },
+    {
+      "username": "testUserTwo",
+      "id": "UE_p1fLCrnC9ZcEUtMvE8",
+      "password": "$2b$15$9xO6hjTCWFGayVugezMYpehz2Qw.Xjc3DrqylD2zCBWLyHxVib9Ci"
+    },
+    {
+      "username": "testUserTwo",
+      "id": "4xXWqhfRvVw6kEv11Egne",
+      "password": "$2b$15$o.YO2FQuz7rqNksU8qTyleHV/IlEIcVgExbLcVQJMHsY9PA8g0G0S"
+    }
+  ]
 }

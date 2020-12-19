@@ -12,6 +12,11 @@ export class AppComponent {
       url: '/review',
       text: 'Write Review',
       icon: 'edit'
+    },
+    {
+      url: '/login',
+      text: 'Login',
+      icon: 'login'
     }
   ];
 }
