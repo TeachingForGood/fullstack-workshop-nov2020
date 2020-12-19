@@ -1,7 +1,12 @@
-<div class="filter">
-  <h1>Find a Movie Review</h1>
-  <mat-form-field>
-    <mat-label>Movie Title</mat-label>
-    <input type="text" matInput [formControl]="filterInput">
-  </mat-form-field>
+<div class="container">
+  <div class="filter">
+    <h1>Find a Movie Review</h1>
+    <mat-form-field>
+      <mat-label>Movie Title</mat-label>
+      <input type="text" matInput [formControl]="filterInput">
+    </mat-form-field>
+  </div>
+  <div class="reviews">
+    <app-display-review *ngFor="let reviewData of filteredReviews" [review]="reviewData"></app-display-review>
+  </div>
 </div>
