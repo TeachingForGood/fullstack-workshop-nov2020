@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
     const decodedToken = jwt.verify(token, jwt_key);
-    req.userData = { userId: decodedToken.userId };
+    req.userData = { id: decodedToken.id };
     // if code gets here with no errors thrown, token is present and valid
     next();
   } catch (error) {

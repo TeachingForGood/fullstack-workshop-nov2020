@@ -11,7 +11,7 @@ userLogin = async (req, res) => {
     throw authError;
   }
   // found user
-  const { username, userId, password } = fetchedUser[0];
+  const { username, id, password } = fetchedUser[0];
   const hashMatch = await bcrypt.compare(req.body.password, password);
   if (!hashMatch) {
     throw authError;
@@ -19,7 +19,7 @@ userLogin = async (req, res) => {
   // hashes match, correct password entered
   // time to generate user's JWT
   const token = jwt.sign(
-    { username, userId },
+    { username, id },
     jwt_key,
     { expiresIn: '4h' }
   );
@@ -27,7 +27,7 @@ userLogin = async (req, res) => {
   res.status(200).json({
     token: token,
     expiresIn: 14400,
-    userId
+    id
   });
 }
 

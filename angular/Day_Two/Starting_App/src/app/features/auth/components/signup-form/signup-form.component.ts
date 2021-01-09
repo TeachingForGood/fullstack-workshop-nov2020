@@ -31,9 +31,7 @@ export class SignupFormComponent implements OnInit {
   submitSignup(): void {
     if (this.signupForm.valid) {
       const data: SignupData = { ...this.signupForm.value };
-      this.authService.signup(data).subscribe((res) => {
-        console.log(res);
-      });
+      this.authService.signup(data);
     } else {
       this.signupForm.markAllAsTouched();
     }
